@@ -19,13 +19,21 @@ public class Competition {
     private String lieu;
     private String type;
 
-    public Competition(String nom, Date date, String lieu, String type) {
+    public Competition(int id, String nom, Date date, String lieu, String type) {
+        this.id = id;
         this.nom = nom;
         this.date = date;
         this.lieu = lieu;
         this.type = type;
     }
 
+    public Competition(String nom, Date date, String lieu, String type) {
+        this.nom = nom;
+        this.date = date;
+        this.lieu = lieu;
+        this.type = type;
+    }
+    
     public int getId() {
         return id;
     }
