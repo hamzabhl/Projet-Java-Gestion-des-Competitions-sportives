@@ -1,5 +1,5 @@
 # Gestion des Compétitions Sportives
-Ce projet permet de gérer la gestion des compétitions sportives au sein d'une école ou université.
+Ce projet permet de gérer les compétitions sportives au sein d'une école ou université.
 ## Functionalities
 • Créer une compétition.  
 • Inscrire un étudiant.  
