@@ -102,6 +102,7 @@ public class CompetitionService implements IDao<Competition> {
             ResultSet resultSet = statement.executeQuery();
             if (resultSet.next()) {
                 return new Competition(
+                        resultSet.getInt("id"),
                         resultSet.getString("nom"),
                         resultSet.getDate("date"),
                         resultSet.getString("lieu"),
@@ -122,6 +123,7 @@ public class CompetitionService implements IDao<Competition> {
                 ResultSet resultSet = statement.executeQuery()) {
             while (resultSet.next()) {
                 Competition competition = new Competition(
+                        resultSet.getInt("id"),
                         resultSet.getString("nom"),
                         resultSet.getDate("date"),
                         resultSet.getString("lieu"),
@@ -135,20 +137,4 @@ public class CompetitionService implements IDao<Competition> {
         return competitions;
     }
 
-    public void printAllCompetitions() {
-        String query = "SELECT * FROM competition";
-        try (PreparedStatement statement = connection.prepareStatement(query);
-                ResultSet resultSet = statement.executeQuery()) {
-            System.out.println("\nList of all competitions:");
-            while (resultSet.next()) {
-                System.out.println("Id: " + resultSet.getInt("id")
-                        + ", " + resultSet.getString("nom")
-                        + ", " + resultSet.getDate("date")
-                        + ", " + resultSet.getString("lieu")
-                        + ", " + resultSet.getString("type"));
-            }
-        } catch (SQLException e) {
-            System.err.println("Erreur lors de la récupération des compétitions : " + e.getMessage());
-        }
-    }
 }
