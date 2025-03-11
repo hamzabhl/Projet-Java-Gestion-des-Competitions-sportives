@@ -14,14 +14,11 @@ public class InscriptionCompetition {
     private int competitionId;
     private int etudiantId;
 
-    // Constructor
-    public InscriptionCompetition(int id, int competitionId, int etudiantId) {
-        this.id = id;
+    public InscriptionCompetition(int competitionId, int etudiantId) {
         this.competitionId = competitionId;
         this.etudiantId = etudiantId;
     }
 
-    // Getters and Setters
     public int getId() {
         return id;
     }
@@ -46,12 +43,4 @@ public class InscriptionCompetition {
         this.etudiantId = etudiantId;
     }
 
-    @Override
-    public String toString() {
-        return "InscriptionCompetition{" +
-                "id=" + id +
-                ", competitionId=" + competitionId +
-                ", etudiantId=" + etudiantId +
-                '}';
-    }
 }

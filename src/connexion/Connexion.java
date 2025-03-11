@@ -18,13 +18,13 @@ public class Connexion {
     private static Connexion instance;
     private Connection connection;
 
-    private static final String URL = "jdbc:mysql://localhost:3306/your_database_name";
-    private static final String USER = "your_username";
-    private static final String PASSWORD = "your_password";
+    private static final String URL = "jdbc:mysql://localhost:3306/gcompsport";
+    private static final String USER = "root";
+    private static final String PASSWORD = "";
 
     private Connexion() {
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
+            Class.forName("com.mysql.jdbc.Driver");
             this.connection = DriverManager.getConnection(URL, USER, PASSWORD);
             System.out.println("Connexion à la base de données établie.");
         } catch (ClassNotFoundException | SQLException e) {

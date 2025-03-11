@@ -5,19 +5,21 @@
  */
 package entities;
 
+import java.sql.Date;
+
 /**
  *
  * @author hamza
  */
 public class Competition {
+
     private int id;
     private String nom;
-    private String date;
+    private Date date;
     private String lieu;
     private String type;
 
-    public Competition(int id, String nom, String date, String lieu, String type) {
-        this.id = id;
+    public Competition(String nom, Date date, String lieu, String type) {
         this.nom = nom;
         this.date = date;
         this.lieu = lieu;
@@ -40,11 +42,11 @@ public class Competition {
         this.nom = nom;
     }
 
-    public String getDate() {
+    public Date getDate() {
         return date;
     }
 
-    public void setDate(String date) {
+    public void setDate(Date date) {
         this.date = date;
     }
 
@@ -64,14 +66,4 @@ public class Competition {
         this.type = type;
     }
 
-    @Override
-    public String toString() {
-        return "Competition{" +
-                "id=" + id +
-                ", nom='" + nom + '\'' +
-                ", date='" + date + '\'' +
-                ", lieu='" + lieu + '\'' +
-                ", type='" + type + '\'' +
-                '}';
-    }
 }
