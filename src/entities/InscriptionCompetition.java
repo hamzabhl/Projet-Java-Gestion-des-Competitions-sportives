@@ -14,6 +14,12 @@ public class InscriptionCompetition {
     private int competitionId;
     private int etudiantId;
 
+    public InscriptionCompetition(int id, int competitionId, int etudiantId) {
+        this.id = id;
+        this.competitionId = competitionId;
+        this.etudiantId = etudiantId;
+    }
+    
     public InscriptionCompetition(int competitionId, int etudiantId) {
         this.competitionId = competitionId;
         this.etudiantId = etudiantId;
