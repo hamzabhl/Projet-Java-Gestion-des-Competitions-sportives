@@ -9,7 +9,7 @@ Ce projet permet de gérer les compétitions sportives au sein d'une école ou u
 ### Schéma relationnel 
  • Compétition (id, nom, date, lieu, type)  
  • Étudiant (id, nom, prénom, email)  
- • InscriptionCompétition (id, competition_id, etudiant_id)
+ • Inscription (id, competition_id, etudiant_id)
 ### SQL tables 
 
 ```sql
@@ -30,8 +30,8 @@ CREATE TABLE Etudiant (
     email VARCHAR(255) NOT NULL UNIQUE
 );
 
--- Table: InscriptionCompétition
-CREATE TABLE InscriptionCompetition (
+-- Table: Inscription
+CREATE TABLE Inscription (
     id INT PRIMARY KEY AUTO_INCREMENT,
     competition_id INT NOT NULL,
     etudiant_id INT NOT NULL,
