@@ -11,27 +11,12 @@ package entities;
  */
 public class Inscription {
     
-    private int id;
     private Competition competition;
     private Etudiant etudiant;
-
-    public Inscription(int id, Competition competition, Etudiant etudiant) {
-        this.id = id;
-        this.competition = competition;
-        this.etudiant = etudiant;
-    }
     
     public Inscription(Competition competition, Etudiant etudiant) {
         this.competition = competition;
         this.etudiant = etudiant;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public Competition getCompetition() {

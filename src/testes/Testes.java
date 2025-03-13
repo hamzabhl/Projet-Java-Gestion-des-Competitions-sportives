@@ -41,32 +41,32 @@ public class Testes {
         cs.create(comp6);
         System.out.println("");
 
-        //Find by id
-        Competition foundComp = cs.findById(3);
-        if (foundComp != null) {
-            System.out.println("\nCompétition found : " + foundComp.getId() + ", " + foundComp.getNom() + ", " + foundComp.getDate() + ", " + foundComp.getType());
-        } else {
-            System.err.println("\nNothing found!");
-        }
-
-        //Update
-        foundComp.setNom("Gymnastique");
-        foundComp.setType("Individuel");
-        foundComp.setDate(Date.valueOf("2025-03-25"));
-        cs.update(foundComp);
-
-        //Delete
-        foundComp = cs.findById(5);
-        cs.delete(foundComp);
-        System.out.println("\nCompetition deleted successfully!");
-
-        //FindAll
-        List<Competition> competitions = cs.findAll();
-        for (Competition c : competitions) {
-            System.out.println("Id : " + c.getId() + ", Nom : " + c.getNom() + ", Date : " + c.getDate() + ", Lieu : " + c.getLieu() + ", type : " + c.getType());
-        }
-        System.out.println("");
-
+//        //Find by id
+//        Competition foundComp = cs.findById(3);
+//        if (foundComp != null) {
+//            System.out.println("\nCompétition found : " + foundComp.getId() + ", " + foundComp.getNom() + ", " + foundComp.getDate() + ", " + foundComp.getType());
+//        } else {
+//            System.err.println("\nNothing found!");
+//        }
+//
+//        //Update
+//        foundComp.setNom("Gymnastique");
+//        foundComp.setType("Individuel");
+//        foundComp.setDate(Date.valueOf("2025-03-25"));
+//        cs.update(foundComp);
+//
+//        //Delete
+//        foundComp = cs.findById(5);
+//        cs.delete(foundComp);
+//        System.out.println("\nCompetition deleted successfully!");
+//
+//        //FindAll
+//        List<Competition> competitions = cs.findAll();
+//        for (Competition c : competitions) {
+//            System.out.println("Id : " + c.getId() + ", Nom : " + c.getNom() + ", Date : " + c.getDate() + ", Lieu : " + c.getLieu() + ", type : " + c.getType());
+//        }
+//        System.out.println("");
+//
         //----------------------------------------------------------------------------------------------------------------------------------------------------------
         EtudiantService es = new EtudiantService();
         // Create
@@ -95,38 +95,38 @@ public class Testes {
         es.create(e4);
         es.create(e5);
 
-        // Find an existing student by ID
-        Etudiant e = es.findById(9);
-        if (e != null) {
-            System.out.println("\n Student found (Id : " + e.getId() + ", " + e.getNom() + " " + e.getPrenom() + ", " + e.getEmail()+")");
-        } else {
-            System.err.println("\n No student found with the specified ID.");
-        }
-
-        // Update
-        if (e != null) {
-            // Update the student's email
-            e.setEmail("droubi@example.com");
-            es.update(e);
-            System.out.println("\n Student updated successfully  (Id : " + e.getId() + ", " + e.getNom() + " " + e.getPrenom() + ", " + e.getEmail()+")");
-        } else {
-            System.err.println("\n No student found with the specified ID.");
-        }
-
-        // Delete
-        e = es.findById(2);
-        if (e != null) {
-            es.delete(e);
-        } else {
-            System.err.println("\n No student found with the specified ID.");
-        }
-
-        List<Etudiant> etudiants = es.findAll();
-        System.out.println("");
-        for (Etudiant et : etudiants) {
-            System.out.println("Id : " + et.getId() + " - " + et.getNom() + " " + et.getPrenom() + " - " + et.getEmail());
-        }
-        System.out.println("");
+//        // Find an existing student by ID
+//        Etudiant e = es.findById(9);
+//        if (e != null) {
+//            System.out.println("\n Student found (Id : " + e.getId() + ", " + e.getNom() + " " + e.getPrenom() + ", " + e.getEmail()+")");
+//        } else {
+//            System.err.println("\n No student found with the specified ID.");
+//        }
+//
+//        // Update
+//        if (e != null) {
+//            // Update the student's email
+//            e.setEmail("droubi@example.com");
+//            es.update(e);
+//            System.out.println("\n Student updated successfully  (Id : " + e.getId() + ", " + e.getNom() + " " + e.getPrenom() + ", " + e.getEmail()+")");
+//        } else {
+//            System.err.println("\n No student found with the specified ID.");
+//        }
+//
+//        // Delete
+//        e = es.findById(2);
+//        if (e != null) {
+//            es.delete(e);
+//        } else {
+//            System.err.println("\n No student found with the specified ID.");
+//        }
+//
+//        List<Etudiant> etudiants = es.findAll();
+//        System.out.println("");
+//        for (Etudiant et : etudiants) {
+//            System.out.println("Id : " + et.getId() + " - " + et.getNom() + " " + et.getPrenom() + " - " + et.getEmail());
+//        }
+//        System.out.println("");
 
         //--------------------------------------------------------------------------------------------------------------------------------------------------------------
         InscriptionService is = new InscriptionService();
@@ -150,40 +150,21 @@ public class Testes {
         is.create(inscr3);
         is.create(inscr4);
 
-        // Find an existing inscription by ID
-        Inscription inscr = is.findById(1);
-        if (inscr != null) {
-            System.out.println("\n Inscription found (Id : " + inscr.getId()
-                    + " - Competition : " + cs.findById(inscr.getCompetition().getId()).getNom()
-                    + " - Etudiant : " + es.findById(inscr.getEtudiant().getId()).getNom() + " " + es.findById(inscr.getEtudiant().getId()).getPrenom() + ")");
-        } else {
-            System.err.println("\n No inscription found with the specified ID.");
-        }
-
-        // Update
-        if (inscr != null) {
-            inscr = is.findById(4);
-            System.out.println("\n Iscription Id : " + inscr.getId() + " - Etudiant : " + es.findById(inscr.getEtudiant().getId()).getNom() + " " + es.findById(inscr.getEtudiant().getId()).getPrenom() + " - Competition : " + cs.findById(inscr.getCompetition().getId()).getNom());
-            inscr.setCompetition(cs.findById(3));
-            is.update(inscr);
-        } else {
-            System.err.println("\n No Inscription found with the specified ID.");
-        }
+        // Update inscription (competition)
+        Competition newComp = cs.findById(8); 
+        inscr1.setCompetition(newComp);
+        is.update(inscr1);
         
         // Delete
-        if (inscr != null) {
-            inscr = is.findById(3);
-            is.delete(inscr);
-        } else {
-            System.err.println("\n No Inscription found with the specified ID.");
-        }
+        is.delete(inscr4);
         
         System.out.println("");
         List<Inscription> inscriptions = is.findAll();
         for (Inscription i : inscriptions) {
             Etudiant etudiant = i.getEtudiant();
             Competition competition = i.getCompetition();
-            System.out.println("Id Inscription: " + i.getId() + " - " + etudiant.getNom() + " " + etudiant.getPrenom() + " - " + competition.getNom());
+            System.out.println(etudiant.getNom() + " " + etudiant.getPrenom() + " - " + competition.getNom());
         }
+        
     }
 }

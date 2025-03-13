@@ -51,30 +51,28 @@ public class InscriptionService implements IDao<Inscription> {
 
     @Override
     public boolean update(Inscription i) {
-        // Check if another inscription exists with the same competition & student (but different id)
-        String checkQuery = "SELECT COUNT(*) FROM inscription WHERE competition_id = ? AND etudiant_id = ? AND id != ?";
-        String updateQuery = "UPDATE inscription SET competition_id = ?, etudiant_id = ? WHERE id = ?";
+        String checkQuery = "SELECT COUNT(*) FROM inscription WHERE competition_id = ? AND etudiant_id = ?";
+        String updateQuery = "UPDATE inscription SET competition_id = ?, etudiant_id = ? WHERE competition_id = ? AND etudiant_id = ?";
 
         try (PreparedStatement checkStatement = connection.prepareStatement(checkQuery)) {
             checkStatement.setInt(1, i.getCompetition().getId());
             checkStatement.setInt(2, i.getEtudiant().getId());
-            checkStatement.setInt(3, i.getId());
 
             ResultSet resultSet = checkStatement.executeQuery();
             if (resultSet.next() && resultSet.getInt(1) > 0) {
-                System.err.println("Erreur : Cet étudiant est déjà inscrit à cette compétition.");
-                return false;  // Prevent duplicate entry
+                System.err.println("L'inscription existe déjà.");
+                return false;
             }
         } catch (SQLException e) {
             System.err.println("Erreur lors de la vérification des doublons : " + e.getMessage());
             return false;
         }
 
-        // If no duplicate found, proceed with update
         try (PreparedStatement statement = connection.prepareStatement(updateQuery)) {
             statement.setInt(1, i.getCompetition().getId());
             statement.setInt(2, i.getEtudiant().getId());
-            statement.setInt(3, i.getId());
+            statement.setInt(3, i.getCompetition().getId());
+            statement.setInt(4, i.getEtudiant().getId());
             statement.executeUpdate();
             System.out.println("Inscription mise à jour avec succès.");
             return true;
@@ -86,9 +84,10 @@ public class InscriptionService implements IDao<Inscription> {
 
     @Override
     public boolean delete(Inscription i) {
-        String query = "DELETE FROM inscription WHERE id = ?";
+        String query = "DELETE FROM inscription WHERE competition_id = ? AND etudiant_id = ?";
         try (PreparedStatement statement = connection.prepareStatement(query)) {
-            statement.setInt(1, i.getId());
+            statement.setInt(1, i.getCompetition().getId());
+            statement.setInt(2, i.getEtudiant().getId());
             statement.executeUpdate();
             System.out.println("Inscription supprimée avec succès.");
             return true;
@@ -97,23 +96,11 @@ public class InscriptionService implements IDao<Inscription> {
             return false;
         }
     }
-
+    
     @Override
-    public Inscription findById(int id) {
-        String query = "SELECT * FROM inscription WHERE id = ?";
-        try (PreparedStatement statement = connection.prepareStatement(query)) {
-            statement.setInt(1, id);
-            ResultSet resultSet = statement.executeQuery();
-            if (resultSet.next()) {
-                Competition competition = new CompetitionService().findById(resultSet.getInt("competition_id"));
-                Etudiant etudiant = new EtudiantService().findById(resultSet.getInt("etudiant_id"));
-                return new Inscription(resultSet.getInt("id"), competition, etudiant);
-            }
-        } catch (SQLException e) {
-            System.err.println("Erreur lors de la récupération de l'inscription : " + e.getMessage());
-        }
+    public Inscription findById(int i){
         return null;
-    }
+    } 
 
     @Override
     public List<Inscription> findAll() {
@@ -124,11 +111,11 @@ public class InscriptionService implements IDao<Inscription> {
             while (resultSet.next()) {
                 Competition competition = new CompetitionService().findById(resultSet.getInt("competition_id"));
                 Etudiant etudiant = new EtudiantService().findById(resultSet.getInt("etudiant_id"));
-                inscriptions.add(new Inscription(resultSet.getInt("id"), competition, etudiant));
+                inscriptions.add(new Inscription(competition, etudiant));
             }
         } catch (SQLException e) {
             System.err.println("Erreur lors de la récupération des inscriptions : " + e.getMessage());
         }
         return inscriptions;
     }
-} 
+}
