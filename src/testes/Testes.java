@@ -11,8 +11,8 @@ import java.sql.Date;
 import java.util.List;
 import services.CompetitionService;
 import services.EtudiantService;
-import services.InscriptionCompetitionService;
-import entities.InscriptionCompetition;
+import services.InscriptionService;
+import entities.Inscription;
 
 /**
  *
@@ -24,11 +24,11 @@ public class Testes {
 
         //Test creation
         CompetitionService cs = new CompetitionService();
+        System.out.println("");
         Competition comp1 = new Competition("Football", Date.valueOf("2025-03-17"), "ENS Marrakech", "Collectif");
         Competition comp2 = new Competition("Saut en longueur", Date.valueOf("2025-03-18"), "ENS Marrakech", "individuel");
         Competition comp3 = new Competition("Volley-ball", Date.valueOf("2025-03-20"), "ENS Marrakech", "Collectif");
         Competition comp4 = new Competition("Basket-ball", Date.valueOf("2025-04-07"), "ENS Marrakech", "Collectif");
-
         cs.create(comp1);
         cs.create(comp2);
         cs.create(comp3);
@@ -37,11 +37,9 @@ public class Testes {
         //Test restriction of duplication 
         Competition comp5 = new Competition("Saut en longueur", Date.valueOf("2025-03-18"), "ENS Marrakech", "individuel");
         Competition comp6 = new Competition("Volley-ball", Date.valueOf("2025-03-20"), "ENS Marrakech", "Collectif");
-        Competition comp7 = new Competition("Hand-ball", Date.valueOf("2025-04-12"), "ENS Marrakech", "Collectif");
-
         cs.create(comp5);
         cs.create(comp6);
-        cs.create(comp7);
+        System.out.println("");
 
         //Find by id
         Competition foundComp = cs.findById(3);
@@ -56,7 +54,6 @@ public class Testes {
         foundComp.setType("Individuel");
         foundComp.setDate(Date.valueOf("2025-03-25"));
         cs.update(foundComp);
-        System.out.println("Competition updated successfully : " + foundComp.getNom() + ", " + foundComp.getDate() + ", " + foundComp.getType());
 
         //Delete
         foundComp = cs.findById(5);
@@ -64,11 +61,11 @@ public class Testes {
         System.out.println("\nCompetition deleted successfully!");
 
         //FindAll
-        System.out.println("");
         List<Competition> competitions = cs.findAll();
         for (Competition c : competitions) {
             System.out.println("Id : " + c.getId() + ", Nom : " + c.getNom() + ", Date : " + c.getDate() + ", Lieu : " + c.getLieu() + ", type : " + c.getType());
         }
+        System.out.println("");
 
         //----------------------------------------------------------------------------------------------------------------------------------------------------------
         EtudiantService es = new EtudiantService();
@@ -76,13 +73,25 @@ public class Testes {
         Etudiant e1 = new Etudiant("RAMI", "Ayman", "rami.ayman@example.com");
         Etudiant e2 = new Etudiant("ALAMI", "Imad", "alami.imad@example.com");
         Etudiant e3 = new Etudiant("DROUBI", "Ali", "droubi.ali@example.com");
+        Etudiant e4 = new Etudiant("RAMI", "Ayman", "rami.ayman@example.com");
+        Etudiant e5 = new Etudiant("ALAMI", "Imad", "alami.imad@example.com");
+        Etudiant e6 = new Etudiant("DROUBI", "Ali", "droubi.ali@example.com");
+        Etudiant e7 = new Etudiant("SAIDI", "Fatima", "saidi.fatima@example.com");
+        Etudiant e8 = new Etudiant("BENNOUNA", "Karim", "bennouna.karim@example.com");
+        Etudiant e9 = new Etudiant("EL FILALI", "Leila", "elfilali.leila@example.com");
+        Etudiant e10 = new Etudiant("ZAOUI", "Youssef", "zaoui.youssef@example.com");
         es.create(e1);
         es.create(e2);
         es.create(e3);
+        es.create(e4);
+        es.create(e5);
+        es.create(e6);
+        es.create(e7);
+        es.create(e8);
+        es.create(e9);
+        es.create(e10);
 
         //Test restriction of duplication 
-        Etudiant e4 = new Etudiant("ALAMI", "Imad", "alami.imad@example.com");
-        Etudiant e5 = new Etudiant("DROUBI", "Ali", "droubi.ali@example.com");
         es.create(e4);
         es.create(e5);
 
@@ -108,63 +117,73 @@ public class Testes {
         e = es.findById(2);
         if (e != null) {
             es.delete(e);
-            System.out.println("\n \n" +
-"            System.out.println(\"Id : \"+ et.getId() + \" - \" + et.getNom() + \" \" + et.getPrenom() + \" - \" + et.getEmail());Student ( "+e.getNom()+ " " + e.getPrenom() +") Deleted successfully!");
         } else {
             System.err.println("\n No student found with the specified ID.");
         }
 
-        // Retrieve all students
         List<Etudiant> etudiants = es.findAll();
-        for (Etudiant et : etudiants) 
-            System.out.println("Id : "+ et.getId() + " - " + et.getNom() + " " + et.getPrenom() + " - " + et.getEmail());
+        System.out.println("");
+        for (Etudiant et : etudiants) {
+            System.out.println("Id : " + et.getId() + " - " + et.getNom() + " " + et.getPrenom() + " - " + et.getEmail());
+        }
+        System.out.println("");
 
         //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-        InscriptionCompetitionService ics = new InscriptionCompetitionService();
-        InscriptionCompetition inscr1 = new InscriptionCompetition(cs.findById(1).getId(), es.findById(1).getId());
-        InscriptionCompetition inscr2 = new InscriptionCompetition(cs.findById(2).getId(), es.findById(3).getId());
-        ics.create(inscr1);
-        ics.create(inscr2);           
+        InscriptionService is = new InscriptionService();
         
+        //create
+        Inscription inscr1 = new Inscription(cs.findById(7), es.findById(3));
+        Inscription inscr2 = new Inscription(cs.findById(1), es.findById(6));
+        Inscription inscr3 = new Inscription(cs.findById(2), es.findById(7));
+        Inscription inscr4 = new Inscription(cs.findById(1), es.findById(1));
+        Inscription inscr5 = new Inscription(cs.findById(7), es.findById(3));
+        Inscription inscr6 = new Inscription(cs.findById(8), es.findById(1));
+
+        is.create(inscr1);
+        is.create(inscr2);
+        is.create(inscr3);
+        is.create(inscr4);
+        is.create(inscr5);
+        is.create(inscr6);
+
         //Test restriction of duplication
-        InscriptionCompetition inscr3 = new InscriptionCompetition(cs.findById(8).getId(), es.findById(1).getId());
-        InscriptionCompetition inscr4 = new InscriptionCompetition(cs.findById(2).getId(), es.findById(3).getId());
-        ics.create(inscr3);
-        ics.create(inscr4);
+        is.create(inscr3);
+        is.create(inscr4);
 
         // Find an existing inscription by ID
-        InscriptionCompetition inscr = ics.findById(2);
+        Inscription inscr = is.findById(1);
         if (inscr != null) {
             System.out.println("\n Inscription found (Id : " + inscr.getId()
-                    + ", Competition : " + cs.findById(inscr.getCompetitionId()).getNom()
-                    + ", Etudiant : " + es.findById(inscr.getEtudiantId()).getNom() +" " + es.findById(inscr.getEtudiantId()).getPrenom() + ")");
+                    + " - Competition : " + cs.findById(inscr.getCompetition().getId()).getNom()
+                    + " - Etudiant : " + es.findById(inscr.getEtudiant().getId()).getNom() + " " + es.findById(inscr.getEtudiant().getId()).getPrenom() + ")");
         } else {
             System.err.println("\n No inscription found with the specified ID.");
         }
 
         // Update
         if (inscr != null) {
-            inscr.setCompetitionId(7);
-            ics.update(inscr);
-            System.out.println("\n Inscription updated successfully  (Etudiant : " + es.findById(ics.findById(2).getEtudiantId()).getNom() + " " + es.findById(ics.findById(2).getEtudiantId()).getPrenom() + ", Competition : " + cs.findById(7).getNom() + ")");
+            inscr = is.findById(4);
+            System.out.println("\n Iscription Id : " + inscr.getId() + " - Etudiant : " + es.findById(inscr.getEtudiant().getId()).getNom() + " " + es.findById(inscr.getEtudiant().getId()).getPrenom() + " - Competition : " + cs.findById(inscr.getCompetition().getId()).getNom());
+            inscr.setCompetition(cs.findById(3));
+            is.update(inscr);
         } else {
             System.err.println("\n No Inscription found with the specified ID.");
         }
-
+        
         // Delete
         if (inscr != null) {
-            // Update the student's email
-            inscr = ics.findById(3);
-            ics.delete(inscr);
+            inscr = is.findById(3);
+            is.delete(inscr);
         } else {
             System.err.println("\n No Inscription found with the specified ID.");
         }
-
-        // Retrieve all students
-        List<InscriptionCompetition> inscriptions = ics.findAll();
-        for (InscriptionCompetition i : inscriptions) {
-            System.out.println("Id Inscription: " + i.getId() + " " + es.findById(i.getEtudiantId()).getNom() + " " + es.findById(i.getEtudiantId()).getPrenom() + " " + cs.findById(i.getEtudiantId()).getNom());
+        
+        System.out.println("");
+        List<Inscription> inscriptions = is.findAll();
+        for (Inscription i : inscriptions) {
+            Etudiant etudiant = i.getEtudiant();
+            Competition competition = i.getCompetition();
+            System.out.println("Id Inscription: " + i.getId() + " - " + etudiant.getNom() + " " + etudiant.getPrenom() + " - " + competition.getNom());
         }
-
     }
 }

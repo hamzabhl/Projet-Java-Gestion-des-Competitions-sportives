@@ -53,7 +53,7 @@ public class CompetitionService implements IDao<Competition> {
             insertStatement.setString(4, competition.getType());
 
             insertStatement.executeUpdate();
-            System.out.println("Compétition créée avec succès : " + competition.getNom());
+            System.out.println("Competition created successfully : " + competition.getNom());
             return true;
 
         } catch (SQLException e) {
