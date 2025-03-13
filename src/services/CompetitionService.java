@@ -137,8 +137,4 @@ public class CompetitionService implements IDao<Competition> {
         return competitions;
     }
 
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 9f2884e6694b183b82b91df91e935b9ce26fe497

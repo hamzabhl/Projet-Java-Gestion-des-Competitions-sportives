@@ -5,13 +5,10 @@
  */
 package services;
 
-<<<<<<< HEAD
 /**
  *
  * @author hamza
  */
-=======
->>>>>>> 9f2884e6694b183b82b91df91e935b9ce26fe497
 import connexion.Connexion;
 import dao.IDao;
 import entities.Etudiant;
