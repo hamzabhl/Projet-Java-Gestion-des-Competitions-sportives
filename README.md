@@ -9,7 +9,7 @@ Ce projet permet de gérer les compétitions sportives au sein d'une école ou u
 ### Schéma relationnel 
  • Compétition (id, nom, date, lieu, type)  
  • Étudiant (id, nom, prénom, email)  
- • Inscription (id, competition_id, etudiant_id)
+ • Inscription (competition_id, etudiant_id)
 ### SQL tables 
 
 ```sql
@@ -32,10 +32,14 @@ CREATE TABLE Etudiant (
 
 -- Table: Inscription
 CREATE TABLE Inscription (
-    id INT PRIMARY KEY AUTO_INCREMENT,
     competition_id INT NOT NULL,
     etudiant_id INT NOT NULL,
+    PRIMARY KEY(competition_id, etudiant_id),
     FOREIGN KEY (competition_id) REFERENCES Competition(id),
     FOREIGN KEY (etudiant_id) REFERENCES Etudiant(id),
     UNIQUE (competition_id, etudiant_id) -- Dans une compétition, l'étudiant doit être inscrit une seule fois
 );
+```
+# Démonstration Vidéo
+
+https://github.com/user-attachments/assets/952a816b-d624-446a-aa74-24d33facf639
