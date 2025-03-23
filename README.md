@@ -36,19 +36,15 @@ Le projet présenté ici concerne la réalisation d'une application informatique
 
 4. Système de gestion de bases de données (SGBD) : MySQL  
  • Stockage des données structurées (entités : Admin, Étudiant, Compétition, Inscription).  
- • Optimisation des requêtes et garantie de la sécurité des données.
 
 5. Interface d'administration de la base de données : phpMyAdmin  
  • Gestion visuelle et simplifiée de la base de données MySQL.  
- • Facilitation des opérations courantes : sauvegardes, restauration, optimisation, etc.
 
 6. Architecture logicielle : Architecture en couches  
  • Séparation claire entre GUI, Services métier, DAO, Entités et Base de données.  
  • Modularité facilitant la maintenance et l'évolution.
 
 7. Environnement de développement : Netbeans IDE 8.0.2  
- • Développement et débogage efficaces en Java.  
- • Intégration simplifiée des bibliothèques externes.
 
 8. Gestion de projet et de versions : Git  
  • Suivi des versions, gestion collaborative du code source.
