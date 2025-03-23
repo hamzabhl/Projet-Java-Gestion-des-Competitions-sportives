@@ -40,4 +40,6 @@ CREATE TABLE Inscription (
     UNIQUE (competition_id, etudiant_id) -- Dans une compétition, l'étudiant doit être inscrit une seule fois
 );
 
-https://github.com/user-attachments/assets/4d02cf04-21f5-4d79-9e7d-41dd71c4087b
+# Démonstration Vidéo
+
+https://github.com/user-attachments/assets/952a816b-d624-446a-aa74-24d33facf639
