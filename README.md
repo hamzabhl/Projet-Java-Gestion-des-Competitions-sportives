@@ -1,10 +1,10 @@
 # Gestion des Compétitions Sportives
 Ce projet permet de gérer les compétitions sportives au sein d'une école ou université.
 ## Functionalities
-• Créer une compétition.  
-• Inscrire un étudiant.  
-• Filtrer les inscriptions par type de compétition.  
-• Rechercher un étudiant inscrit.
+• Gérer une compétition (Créer, Modifier et Supprimer).  
+• Inscrire un étudiant (Créer et Inscrire, Modifier, Supprimer l'étudiant et son Inscription).  
+• Filtrer les inscriptions par compétition.  
+• Consulter les statistiques (Taux d'Etudiants en chaque compétition, Taux d'Etudiants en chaque type de compétition).
 ## DataBase
 ### Schéma relationnel 
  • Compétition (id, nom, date, lieu, type)  
