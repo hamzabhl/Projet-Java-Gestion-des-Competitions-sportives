@@ -1,20 +1,37 @@
 # Gestion des Compétitions Sportives
-Ce projet permet de gérer les compétitions sportives au sein d'une école ou université.
+## Contexte général
+La gestion des compétitions sportives implique un suivi rigoureux des participants, des inscriptions, du calendrier des épreuves, et de la gestion administrative associée. Traditionnellement, ces tâches sont effectuées manuellement ou avec des outils génériques peu adaptés, entraînant ainsi des erreurs, pertes de temps, et difficultés dans le suivi en temps réel.
+Le projet présenté ici concerne la réalisation d'une application informatique, développée en Java Swing avec une base de données MySQL reliée via JDBC, permettant d'automatiser et faciliter l'organisation, le suivi et la gestion des compétitions sportives.  
+
+## ❗ Problématique
+• Difficulté de gestion administrative liée à un nombre élevé d'inscriptions et de participants.  
+• Risques d'erreurs humaines fréquents dans le traitement manuel des données.  
+• Complexité dans la planification et le suivi des compétitions en temps réel.  
+• Manque d'un système efficace pour le stockage sécurisé et la consultation rapide des informations (statistiques, inscriptions).
+
+## Objectifs
+• Concevoir et développer une application ergonomique avec une interface graphique intuitive (Java Swing) facilitant l'utilisation.  
+• Informatiser la gestion des inscriptions.  
+• Réduire drastiquement les erreurs de saisie et de traitement des données.  
+• Proposer une gestion efficace et sécurisée des données avec une connexion stable à une base de données (MySQL via JDBC et phpMyAdmin).
+
 ## Functionalities
 • Gérer une compétition (Créer, Modifier et Supprimer).  
 • Inscrire un étudiant (Créer et Inscrire, Modifier, Supprimer l'étudiant et son Inscription).  
 • Filtrer les inscriptions par compétition.  
 • Consulter les statistiques (Taux d'Etudiants en chaque compétition, Taux d'Etudiants en chaque type de compétition).
-## DataBase
-### Schéma relationnel 
- • Compétition (id, nom, date, lieu, type)  
- • Étudiant (id, nom, prénom, email)  
- • Inscription (competition_id, etudiant_id)
+
 ## Class Diagram
 <img width="507" alt="Image" src="https://github.com/user-attachments/assets/5a61eeb6-7921-47ed-9ebb-a95cb621e201" />
 
 ## Use Case Diagram
 <img width="647" alt="Image" src="https://github.com/user-attachments/assets/45750b97-ff35-4b47-bb73-9afbee3d0a74" />
+
+## DataBase
+### Schéma relationnel 
+ • Compétition (id, nom, date, lieu, type)  
+ • Étudiant (id, nom, prénom, email)  
+ • Inscription (competition_id, etudiant_id)
 
 ### SQL tables 
 
