@@ -16,8 +16,8 @@ Le projet présenté ici concerne la réalisation d'une application informatique
 • Proposer une gestion efficace et sécurisée des données avec une connexion stable à une base de données (MySQL via JDBC et phpMyAdmin).
 
 ## Functionalities
-• Gérer une compétition (Créer, Modifier et Supprimer).  
-• Inscrire un étudiant (Créer et Inscrire, Modifier, Supprimer l'étudiant et son Inscription).  
+• Gérer une compétition (CRUD).  
+• Inscrire un étudiant (Créer et Inscrire, Modifier l'inscription, Modifier les informations, Supprimer l'étudiant et son Inscription).  
 • Filtrer les inscriptions par compétition.  
 • Consulter les statistiques (Taux d'Etudiants en chaque compétition, Taux d'Etudiants en chaque type de compétition).
 
