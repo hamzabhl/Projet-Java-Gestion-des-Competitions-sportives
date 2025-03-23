@@ -22,35 +22,35 @@ Le projet présenté ici concerne la réalisation d'une application informatique
 • Consulter les statistiques (Taux d'Etudiants en chaque compétition, Taux d'Etudiants en chaque type de compétition).
 
 ## Technologies utilisées :
-1. Interface Graphique (GUI) :Java Swing
+1. Interface Graphique (GUI) :Java Swing  
  • Création d’interfaces utilisateur intuitives, interactives et conviviales.  
  • Utilisation de composants graphiques (JFrame, JTable, JButton, JTextField, etc.).
 
-2. Langage de programmation : Java
+2. Langage de programmation : Java  
  • Langage orienté objet robuste, portable et sécurisé.  
  • Gestion simplifiée des connexions avec les bases de données grâce à JDBC.
 
-3. Accès aux données : JDBC (Java Database Connectivity)
+3. Accès aux données : JDBC (Java Database Connectivity)  
  • Connexion à la base de données MySQL.  
  • Exécution de requêtes SQL directement depuis Java.
 
-4. Système de gestion de bases de données (SGBD) : MySQL
+4. Système de gestion de bases de données (SGBD) : MySQL  
  • Stockage des données structurées (entités : Admin, Étudiant, Compétition, Inscription).  
  • Optimisation des requêtes et garantie de la sécurité des données.
 
-5. Interface d'administration de la base de données : phpMyAdmin
+5. Interface d'administration de la base de données : phpMyAdmin  
  • Gestion visuelle et simplifiée de la base de données MySQL.  
  • Facilitation des opérations courantes : sauvegardes, restauration, optimisation, etc.
 
-6. Architecture logicielle : Architecture en couches
+6. Architecture logicielle : Architecture en couches  
  • Séparation claire entre GUI, Services métier, DAO, Entités et Base de données.  
  • Modularité facilitant la maintenance et l'évolution.
 
-7. Environnement de développement : Eclipse IDE ou IntelliJ IDEA
+7. Environnement de développement : Netbeans IDE 8.0.2  
  • Développement et débogage efficaces en Java.  
  • Intégration simplifiée des bibliothèques externes.
 
-8. Gestion de projet et de versions (recommandation optionnelle) : Git
+8. Gestion de projet et de versions : Git  
  • Suivi des versions, gestion collaborative du code source.
 
 
