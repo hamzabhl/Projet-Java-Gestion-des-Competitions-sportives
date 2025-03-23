@@ -23,31 +23,31 @@ Le projet présenté ici concerne la réalisation d'une application informatique
 
 ## Technologies utilisées :
 1. Interface Graphique (GUI) :Java Swing
- • Création d’interfaces utilisateur intuitives, interactives et conviviales.
+ • Création d’interfaces utilisateur intuitives, interactives et conviviales.  
  • Utilisation de composants graphiques (JFrame, JTable, JButton, JTextField, etc.).
 
 2. Langage de programmation : Java
- • Langage orienté objet robuste, portable et sécurisé.
+ • Langage orienté objet robuste, portable et sécurisé.  
  • Gestion simplifiée des connexions avec les bases de données grâce à JDBC.
 
 3. Accès aux données : JDBC (Java Database Connectivity)
- • Connexion à la base de données MySQL.
+ • Connexion à la base de données MySQL.  
  • Exécution de requêtes SQL directement depuis Java.
 
 4. Système de gestion de bases de données (SGBD) : MySQL
- • Stockage des données structurées (entités : Admin, Étudiant, Compétition, Inscription).
+ • Stockage des données structurées (entités : Admin, Étudiant, Compétition, Inscription).  
  • Optimisation des requêtes et garantie de la sécurité des données.
 
 5. Interface d'administration de la base de données : phpMyAdmin
- • Gestion visuelle et simplifiée de la base de données MySQL.
+ • Gestion visuelle et simplifiée de la base de données MySQL.  
  • Facilitation des opérations courantes : sauvegardes, restauration, optimisation, etc.
 
 6. Architecture logicielle : Architecture en couches
- • Séparation claire entre GUI, Services métier, DAO, Entités et Base de données.
+ • Séparation claire entre GUI, Services métier, DAO, Entités et Base de données.  
  • Modularité facilitant la maintenance et l'évolution.
 
 7. Environnement de développement : Eclipse IDE ou IntelliJ IDEA
- • Développement et débogage efficaces en Java.
+ • Développement et débogage efficaces en Java.  
  • Intégration simplifiée des bibliothèques externes.
 
 8. Gestion de projet et de versions (recommandation optionnelle) : Git
