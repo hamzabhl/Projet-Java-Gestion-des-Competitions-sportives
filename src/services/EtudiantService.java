@@ -133,4 +133,26 @@ public class EtudiantService implements IDao<Etudiant> {
         }
         return etudiants;
     }
+    
+    
+    public Etudiant findByEmail(String email) {
+        Etudiant etudiant = null;
+        String sql = "SELECT * FROM etudiant WHERE email = ?";
+
+        try (PreparedStatement statement = connection.prepareStatement(sql)) {
+            statement.setString(1, email);
+            ResultSet resultSet = statement.executeQuery();
+
+            if (resultSet.next()) {
+                int id = resultSet.getInt("id");
+                String nom = resultSet.getString("nom");
+                String prenom = resultSet.getString("prenom");
+
+                etudiant = new Etudiant(id, nom, prenom, email);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return etudiant;
+    }
 }
