@@ -10,6 +10,10 @@ Ce projet permet de gérer les compétitions sportives au sein d'une école ou u
  • Compétition (id, nom, date, lieu, type)  
  • Étudiant (id, nom, prénom, email)  
  • Inscription (competition_id, etudiant_id)
+## Class Diagram
+<img width="507" alt="Image" src="https://github.com/user-attachments/assets/5a61eeb6-7921-47ed-9ebb-a95cb621e201" />
+## Use Case Diagram
+<img width="647" alt="Image" src="https://github.com/user-attachments/assets/45750b97-ff35-4b47-bb73-9afbee3d0a74" />
 ### SQL tables 
 
 ```sql
