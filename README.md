@@ -39,7 +39,7 @@ CREATE TABLE Inscription (
     FOREIGN KEY (etudiant_id) REFERENCES Etudiant(id),
     UNIQUE (competition_id, etudiant_id) -- Dans une compétition, l'étudiant doit être inscrit une seule fois
 );
-
+```
 # Démonstration Vidéo
 
 https://github.com/user-attachments/assets/952a816b-d624-446a-aa74-24d33facf639
