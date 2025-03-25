@@ -51,7 +51,8 @@ Le projet présenté ici concerne la réalisation d'une application informatique
 
 
 ## Class Diagram
-<img width="507" alt="Image" src="https://github.com/user-attachments/assets/5a61eeb6-7921-47ed-9ebb-a95cb621e201" />
+<img width="479" alt="Image" src="https://github.com/user-attachments/assets/8d75f379-be5d-46b6-b174-56e02ac1b39c" />
+
 
 ## Use Case Diagram
 <img width="647" alt="Image" src="https://github.com/user-attachments/assets/45750b97-ff35-4b47-bb73-9afbee3d0a74" />
