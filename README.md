@@ -1,15 +1,68 @@
 # Gestion des Compétitions Sportives
-Ce projet permet de gérer les compétitions sportives au sein d'une école ou université.
+## Contexte général
+La gestion des compétitions sportives implique un suivi rigoureux des participants, des inscriptions, du calendrier des épreuves, et de la gestion administrative associée. Traditionnellement, ces tâches sont effectuées manuellement ou avec des outils génériques peu adaptés, entraînant ainsi des erreurs, pertes de temps, et difficultés dans le suivi en temps réel.
+Le projet présenté ici concerne la réalisation d'une application informatique, développée en Java Swing avec une base de données MySQL reliée via JDBC, permettant d'automatiser et faciliter l'organisation, le suivi et la gestion des compétitions sportives.  
+
+## ❗ Problématique
+• Difficulté de gestion administrative liée à un nombre élevé d'inscriptions et de participants.  
+• Risques d'erreurs humaines fréquents dans le traitement manuel des données.  
+• Complexité dans la planification et le suivi des compétitions en temps réel.  
+• Manque d'un système efficace pour le stockage sécurisé et la consultation rapide des informations (statistiques, inscriptions).
+
+## Objectifs
+• Concevoir et développer une application ergonomique avec une interface graphique intuitive (Java Swing) facilitant l'utilisation.  
+• Informatiser la gestion des inscriptions.  
+• Réduire drastiquement les erreurs de saisie et de traitement des données.  
+• Proposer une gestion efficace et sécurisée des données avec une connexion stable à une base de données (MySQL via JDBC et phpMyAdmin).
+
 ## Functionalities
-• Créer une compétition.  
-• Inscrire un étudiant.  
-• Filtrer les inscriptions par type de compétition.  
-• Rechercher un étudiant inscrit.
+• Gérer une compétition (CRUD).  
+• Inscrire un étudiant (Créer et Inscrire, Modifier l'inscription, Modifier les informations, Supprimer l'étudiant et son Inscription).  
+• Filtrer les inscriptions par compétition.  
+• Consulter les statistiques (Taux d'Etudiants en chaque compétition, Taux d'Etudiants en chaque type de compétition).
+
+## Technologies utilisées :
+1. Interface Graphique (GUI) :Java Swing  
+ • Création d’interfaces utilisateur intuitives, interactives et conviviales.  
+ • Utilisation de composants graphiques (JFrame, JTable, JButton, JTextField, etc.).
+
+2. Langage de programmation : Java  
+ • Langage orienté objet robuste, portable et sécurisé.  
+ • Gestion simplifiée des connexions avec les bases de données grâce à JDBC.
+
+3. Accès aux données : JDBC (Java Database Connectivity)  
+ • Connexion à la base de données MySQL.  
+ • Exécution de requêtes SQL directement depuis Java.
+
+4. Système de gestion de bases de données (SGBD) : MySQL  
+ • Stockage des données structurées (entités : Admin, Étudiant, Compétition, Inscription).  
+
+5. Interface d'administration de la base de données : phpMyAdmin  
+ • Gestion visuelle et simplifiée de la base de données MySQL.  
+
+6. Architecture logicielle : Architecture en couches  
+ • Séparation claire entre GUI, Services métier, DAO, Entités et Base de données.  
+ • Modularité facilitant la maintenance et l'évolution.
+
+7. Environnement de développement : Netbeans IDE 8.0.2  
+
+8. Gestion de projet et de versions : Git  
+ • Suivi des versions, gestion collaborative du code source.
+
+
+## Class Diagram
+<img width="479" alt="Image" src="https://github.com/user-attachments/assets/8d75f379-be5d-46b6-b174-56e02ac1b39c" />
+
+
+## Use Case Diagram
+<img width="647" alt="Image" src="https://github.com/user-attachments/assets/45750b97-ff35-4b47-bb73-9afbee3d0a74" />
+
 ## DataBase
 ### Schéma relationnel 
  • Compétition (id, nom, date, lieu, type)  
  • Étudiant (id, nom, prénom, email)  
  • Inscription (competition_id, etudiant_id)
+
 ### SQL tables 
 
 ```sql
@@ -42,4 +95,4 @@ CREATE TABLE Inscription (
 ```
 # Démonstration Vidéo
 
-https://github.com/user-attachments/assets/952a816b-d624-446a-aa74-24d33facf639
+https://github.com/user-attachments/assets/686c6978-c566-478f-9444-50b049f75524
