@@ -95,4 +95,4 @@ CREATE TABLE Inscription (
 ```
 # Démonstration Vidéo
 
-https://github.com/user-attachments/assets/952a816b-d624-446a-aa74-24d33facf639
+https://github.com/user-attachments/assets/686c6978-c566-478f-9444-50b049f75524
