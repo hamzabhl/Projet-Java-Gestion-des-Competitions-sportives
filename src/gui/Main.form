@@ -54,24 +54,29 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
                   <EmptySpace max="32767" attributes="0"/>
-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="bnConnexion" max="32767" attributes="0"/>
-                      <Component id="bnForgotPassword" pref="180" max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="1" attributes="0">
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="jLabel3" max="32767" attributes="0"/>
+                              <Component id="jLabel2" max="32767" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="txtLogin" min="-2" pref="263" max="-2" attributes="0"/>
+                              <Component id="txtPassword" min="-2" pref="266" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="271" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <Component id="bnConnexion" min="-2" pref="266" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="318" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
-                  <EmptySpace max="32767" attributes="0"/>
               </Group>
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="300" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="jLabel3" max="32767" attributes="0"/>
-                      <Component id="jLabel2" max="32767" attributes="0"/>
-                  </Group>
-                  <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="txtPassword" min="-2" pref="204" max="-2" attributes="0"/>
-                      <Component id="txtLogin" min="-2" pref="204" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace pref="300" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="334" max="-2" attributes="0"/>
+                  <Component id="bnForgotPassword" min="-2" pref="232" max="-2" attributes="0"/>
+                  <EmptySpace min="0" pref="334" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -80,19 +85,19 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="120" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel2" alignment="3" min="-2" pref="42" max="-2" attributes="0"/>
                       <Component id="txtLogin" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="txtPassword" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
                   <Component id="bnConnexion" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
                   <Component id="bnForgotPassword" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="120" max="32767" attributes="0"/>
+                  <EmptySpace pref="142" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -100,11 +105,23 @@
       <SubComponents>
         <Component class="javax.swing.JLabel" name="jLabel2">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Georgia" size="18" style="1"/>
+            </Property>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/icons/icons8-person-24.png"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Login"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel3">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Georgia" size="18" style="1"/>
+            </Property>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/icons/icons8-lock-24.png"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Password"/>
           </Properties>
         </Component>
@@ -120,18 +137,24 @@
         </Component>
         <Component class="javax.swing.JButton" name="bnConnexion">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Connexion"/>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Georgia" size="18" style="1"/>
+            </Property>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/icons/icons8-login-24.png"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="     Connexion"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bnConnexionActionPerformed"/>
           </Events>
-          <AuxValues>
-            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="ImageIcon icon = new ImageIcon(getClass().getResource(&quot;/icons/football.png&quot;));&#xa;Image scaledImage = icon.getImage().getScaledInstance(24, 24, Image.SCALE_SMOOTH);&#xa;bnConnexion.setIcon(new ImageIcon(scaledImage));&#xa;bnConnexion.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT); // Text to the right of icon&#xa;bnConnexion.setIconTextGap(10); // Space between icon and text&#xa;&#xa;// Optional: Customize font, background, etc.&#xa;bnConnexion.setFont(new java.awt.Font(&quot;Segoe UI&quot;, java.awt.Font.BOLD, 14));&#xa;bnConnexion.setFocusPainted(false);"/>
-          </AuxValues>
         </Component>
         <Component class="javax.swing.JButton" name="bnForgotPassword">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Mot de passe oubli&#xe9;"/>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Georgia" size="16" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Mot de passe oubli&#xe9; ?"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bnForgotPasswordActionPerformed"/>
